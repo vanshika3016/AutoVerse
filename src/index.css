@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary-bg: var(--bg-primary);
+  --color-secondary-bg: var(--bg-secondary);
+  --color-accent-1: var(--accent-primary);
+  --color-accent-2: var(--accent-secondary);
+  --color-border-sub: var(--border-sub);
+  --color-text-bright: var(--text-bright);
+  --color-text-muted: var(--text-muted);
+  
+  --color-oceanic: #172836;
+  --color-nocturnal: #114C5A;
+  --color-forsythia: #FFC801;
+  --color-saffron: #FF9932;
+  --color-mint: #D9E8E2;
+  --color-arctic: #F1F6F4;
+}
+
+:root {
+  /* Default is Dark Mode (Oceanic Theme) as requested */
+  --bg-primary: #172836;
+  --bg-secondary: #114C5A;
+  --accent-primary: #FFC801;
+  --accent-secondary: #FF9932;
+  --border-sub: rgba(217, 232, 226, 0.15);
+  --text-bright: #F1F6F4;
+  --text-muted: rgba(241, 246, 244, 0.7);
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #F1F6F4;
+  --bg-secondary: #D9E8E2;
+  --accent-primary: #FF9932;
+  --accent-secondary: #FFC801;
+  --border-sub: rgba(17, 76, 90, 0.15);
+  --text-bright: #172836;
+  --text-muted: rgba(23, 40, 54, 0.7);
+}
+
+/* Base resets & styles */
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-bright);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth custom transitions */
+.transition-micro {
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transition-structural {
+  transition: all 350ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* Custom glowing effects */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(255, 200, 1, 0.15);
+}
+
+.glow-accent-hover:hover {
+  box-shadow: 0 0 30px rgba(255, 200, 1, 0.3);
+}
+
+/* Styling scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Infinite Marquee Animation for Trust Logos */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth floating animations for cards and connections */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(-1deg); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 4.5s ease-in-out infinite;
+}
+
+

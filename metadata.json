@@ -1,0 +1,6 @@
+{
+  "name": "AutoVerse",
+  "description": "A premium, high-converting landing page for an Advanced AI-driven Data Automation Platform featuring an interactive pricing matrix, adaptive bento-to-accordion layout, and interactive 3D particle nexus background.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
